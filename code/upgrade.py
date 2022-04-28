@@ -78,5 +78,15 @@ class Item:
         self.index = index
         self.font = font
 
+    def display_names(self, surface, name, cost, selected):
+        # title
+        title_surf = self.font.render(name, False, TEXT_COLOR)
+        title_rect = title_surf.get_rect(midtop=self.rect.midtop + pygame.math.Vector2(0, 20))
+        # cost
+
+        # draw
+        surface.blit(title_surf, title_rect)
+
     def display(self, surface, selection_nr, name, value, max_value, cost):
         pygame.draw.rect(surface, UI_BG_COLOR, self.rect)
+        self.display_names(surface, name, cost, False)
