@@ -7,10 +7,12 @@ from settings import *
 
 class Game:
     def __init__(self):
+
+        # general setup
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGTH))
-        self.clock = pygame.time.Clock()
         pygame.display.set_caption('Dragon Tales: The Lost Grail')
+        self.clock = pygame.time.Clock()
 
         self.level = Level()
 
